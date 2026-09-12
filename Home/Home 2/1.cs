@@ -23,7 +23,7 @@ if (int.TryParse(Console.ReadLine(), out int year))
     else
         Console.WriteLine("Невисокосный");
 }
-*/
+
 
 Console.Write("Введите первое число: ");
 double.TryParse(Console.ReadLine(), out double a);
@@ -41,4 +41,33 @@ switch (op)
     case '*': Console.WriteLine($"Результат: {a * b}"); break;
     case '/': Console.WriteLine(b != 0 ? $"Результат: {a / b}" : "Ошибка: деление на ноль"); break;
     default: Console.WriteLine("Неизвестная операция"); break;
+}
+
+*/
+
+
+Console.Write("Введите аргумент a: ");
+double.TryParse(Console.ReadLine(), out double a);
+
+if (a == 0)
+{
+	Console.WriteLine("Не квадратное уравнение");
+}
+else
+{
+	Console.Write("Введите аргумент b: ");
+	double.TryParse(Console.ReadLine(), out double b);
+
+	Console.Write("Введите аргумент c: ");
+	double.TryParse(Console.ReadLine(), out double c);
+
+	double D = b*b - 4*a*c ;
+
+
+	if (D > 0)
+		Console.WriteLine($"x1= {(-1*b + Math.Sqrt(D)) / (2*a)} x2 = {(-1*b - Math.Sqrt(D)) / (2*a)} ");
+	else if (D == 0)
+		Console.WriteLine($"x = {(-1*b + Math.Sqrt(D)) / (2*a)}");
+	else 
+		Console.WriteLine("Решения нет");
 }
